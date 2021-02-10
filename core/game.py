@@ -3,7 +3,8 @@ import pygame
 
 class Game:
     """
-    Classe comprenant la boucle de jeu
+    Gère la fenêtre ainsi que la boucle de jeu.
+    La boucle de jeu comprends le traitement des événéments, le moteur physique et le moteur graphique.
     """
 
     def __init__(self):
