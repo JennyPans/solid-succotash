@@ -1,4 +1,5 @@
 import pygame
+from pygame.color import Color
 
 
 class Constants:
@@ -10,3 +11,6 @@ class Constants:
     HEIGHT = 576
     SIZE = (WIDTH, HEIGHT)
     FLAGS = pygame.RESIZABLE
+    BOX_WIDTH = 64
+    BOX_HEIGHT = 64
+    BOX_COLOR = Color(255, 255, 255)
