@@ -11,8 +11,8 @@ class GameObject:
 
     def __init__(self):
         self.position = Vector2(0, 0)
-        self.velocity = Vector2(0.1, 0)
-        self.speed = Vector2(0, 0)
+        self.velocity = Vector2(0, 0)
+        self.speed = Vector2(0.1, 0)
 
     def update(self):
         self.velocity += self.speed
