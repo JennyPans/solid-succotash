@@ -1,4 +1,5 @@
 import pygame
+from constants import Constants
 
 
 class Game:
@@ -9,8 +10,7 @@ class Game:
 
     def __init__(self):
         self.is_running = True
-        self.flags = pygame.RESIZABLE
-        self.screen = pygame.display.set_mode((800, 600), self.flags, vsync=True)
+        self.screen = pygame.display.set_mode(Constants.SIZE, Constants.FLAGS, vsync=True)
         pygame.init()
 
     def handle_events(self):
