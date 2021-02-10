@@ -1,5 +1,7 @@
 import pygame
+from pygame.color import Color
 from constants import Constants
+from game_object import GameObject
 
 
 class Game:
@@ -11,6 +13,7 @@ class Game:
     def __init__(self):
         self.is_running = True
         self.screen = pygame.display.set_mode(Constants.SIZE, Constants.FLAGS, vsync=True)
+        self.player = GameObject()
         pygame.init()
 
     def handle_events(self):
@@ -19,10 +22,11 @@ class Game:
                 self.is_running = False
 
     def update(self):
-        pass
+        self.player.update()
 
     def draw(self):
-        self.screen.fill(pygame.Color(80, 50, 180))
+        self.screen.fill(Color(80, 50, 180))
+        self.player.draw(self.screen)
         pygame.display.flip()
 
     def run(self):
