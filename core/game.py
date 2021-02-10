@@ -21,7 +21,7 @@ class Game:
     def update(self):
         pass
 
-    def render(self):
+    def draw(self):
         self.screen.fill(pygame.Color(80, 50, 180))
         pygame.display.flip()
 
@@ -29,7 +29,7 @@ class Game:
         while self.is_running:
             self.handle_events()
             self.update()
-            self.render()
+            self.draw()
 
 
 if __name__ == '__main__':
