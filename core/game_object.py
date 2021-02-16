@@ -12,12 +12,11 @@ class GameObject:
     def __init__(self):
         self.position = Vector2(0, 0)
         self.velocity = Vector2(0, 0)
-        self.speed = Vector2(0.1, 0)
 
     def update(self):
-        self.velocity += self.speed
         self.position += self.velocity
 
-    def draw(self, screen):
+    def draw(self, screen, interpolation):
+        position = self.position + (self.velocity * interpolation)
         pygame.draw.rect(screen, Constants.BOX_COLOR,
-                         Rect(self.position.x, self.position.y, Constants.BOX_WIDTH, Constants.BOX_HEIGHT))
+                         Rect(position.x, position.y, Constants.BOX_WIDTH, Constants.BOX_HEIGHT))
