@@ -1,7 +1,7 @@
 import time
 
 
-class Time:
+class GameTime:
     """
     Gère le temps et donne le deltatime
     """
