@@ -18,6 +18,8 @@ class Game:
         self.screen = pygame.display.set_mode(Constants.SIZE, Constants.FLAGS, vsync=True)
         self.player = GameObject()
         self.player.velocity.x = 20
+        self.background_color = Color(80, 50, 180)
+        self.value = 1
         pygame.init()
         pygame.mixer.music.load("../assets/musics/music.wav")
         pygame.mixer.music.play(loops=-1)
@@ -31,7 +33,12 @@ class Game:
         self.player.update()
 
     def draw(self, interpolation):
-        self.screen.fill(Color(80, 50, 180))
+        self.screen.fill(self.background_color)
+        if self.background_color.r == 255:
+            self.value = -1
+        if self.background_color.r == 0:
+            self.value = 1
+        self.background_color.r += self.value
         self.player.draw(self.screen, interpolation)
         pygame.display.flip()
 
