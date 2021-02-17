@@ -19,6 +19,8 @@ class Game:
         self.player = GameObject()
         self.player.velocity.x = 20
         pygame.init()
+        pygame.mixer.music.load("../assets/musics/music.wav")
+        pygame.mixer.music.play(loops=-1)
 
     def handle_events(self):
         for event in pygame.event.get():
