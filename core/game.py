@@ -1,9 +1,7 @@
 import pygame
-from pygame.color import Color
 
 from constants import Constants
 from game_object import GameObject
-from game_time import GameTime
 
 
 class Game:
@@ -14,10 +12,10 @@ class Game:
 
     def __init__(self):
         self.is_running = True
-        self.time = GameTime()
+        self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode(Constants.SIZE, Constants.FLAGS, vsync=True)
         self.player = GameObject()
-        self.player.velocity.x = 0.01
+        self.player.velocity.x = 0.001
         pygame.init()
 
     def handle_events(self):
@@ -36,7 +34,7 @@ class Game:
     def run(self):
         lag = 0.0
         while self.is_running:
-            lag += self.time.dt()
+            lag += self.clock.tick()
             self.handle_events()
             while lag >= Constants.MS_PER_TICK:
                 self.update()
