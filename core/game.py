@@ -17,7 +17,7 @@ class Game:
         self.time = GameTime()
         self.screen = pygame.display.set_mode(Constants.SIZE, Constants.FLAGS, vsync=True)
         self.player = GameObject()
-        self.player.velocity.x = 20
+        self.player.velocity.x = 0.01
         pygame.init()
 
     def handle_events(self):

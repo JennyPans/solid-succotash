@@ -15,4 +15,4 @@ class Constants:
     BOX_HEIGHT = 64
     BOX_COLOR = Color(255, 255, 255)
     BG_COLOR = Color(50, 50, 125)
-    MS_PER_TICK = 1_000.0
+    MS_PER_TICK = 1 / 60
