@@ -13,7 +13,7 @@ class Game:
     def __init__(self):
         self.is_running = True
         self.clock = pygame.time.Clock()
-        self.screen = pygame.display.set_mode(Constants.SIZE, Constants.FLAGS, vsync=True)
+        self.screen = pygame.display.set_mode(Constants.SIZE, Constants.FLAGS)
         self.player = GameObject()
         self.player.velocity.x = 0.001
         pygame.init()
